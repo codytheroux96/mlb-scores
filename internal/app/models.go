@@ -1,8 +1,9 @@
 package app
 
 type Team struct {
-	Name   string
-	isHome bool
+	Name         string
+	Abbreviation string
+	IsHome       bool
 }
 
 type Game struct {
