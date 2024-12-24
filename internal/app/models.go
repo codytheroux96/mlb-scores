@@ -18,7 +18,7 @@ type Game struct {
 	Date                string
 }
 
-type Games struct {
+type Scores struct {
 	Date  string
 	Games []Game
 }
