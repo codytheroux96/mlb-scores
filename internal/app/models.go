@@ -7,14 +7,15 @@ type Team struct {
 }
 
 type Game struct {
-	HomeTeam    Team
-	AwayTeam    Team
-	HomeScore   int
-	AwayScore   int
-	HomePitcher string
-	AwayPitcher string
-	GameTime    string
-	GameStatus  string
+	HomeTeam            Team
+	AwayTeam            Team
+	HomeScore           int
+	AwayScore           int
+	HomeStartingPitcher string
+	AwayStartingPitcher string
+	GameTime            string
+	GameStatus          string
+	Date                string
 }
 
 type Games struct {
