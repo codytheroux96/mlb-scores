@@ -26,7 +26,7 @@ func init() {
 }
 
 func GetScores(date string) (*app.Scores, error) {
-	endDate := "2023-10-28"
+	endDate := "2023-10-02"
 
 	req, err := http.NewRequest("GET", basePath+"/games?dates[]="+date+"&dates[]="+endDate, nil)
 	if err != nil {
@@ -43,11 +43,9 @@ func GetScores(date string) (*app.Scores, error) {
 	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
-    if err != nil {
-        return nil, fmt.Errorf("error reading response body: %w", err)
-    }
-
-    fmt.Println("Response Body:", string(body))
+	if err != nil {
+		return nil, fmt.Errorf("error reading response body: %w", err)
+	}
 
 	var scores app.Scores
 	err = json.Unmarshal(body, &scores)
