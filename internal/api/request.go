@@ -52,3 +52,11 @@ func GetScores(date, endDate string) (*app.Scores, error) {
 	}
 	return &scores, nil
 }
+
+func GetTodaysScores() {
+
+}
+
+func GetYesterdaysScores() {
+
+}
