@@ -25,9 +25,7 @@ func init() {
 	apiKey = os.Getenv("API_KEY")
 }
 
-func GetScores(date string) (*app.Scores, error) {
-	endDate := "2023-10-02"
-
+func GetScores(date, endDate string) (*app.Scores, error) {
 	req, err := http.NewRequest("GET", basePath+"/games?dates[]="+date+"&dates[]="+endDate, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
@@ -53,12 +51,4 @@ func GetScores(date string) (*app.Scores, error) {
 		return nil, fmt.Errorf("error decoding JSON response: %w", err)
 	}
 	return &scores, nil
-}
-
-func TodaysScores() {
-
-}
-
-func YesterdaysScores() {
-
 }

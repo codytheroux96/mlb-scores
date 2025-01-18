@@ -16,7 +16,10 @@ func main() {
 
 	switch os.Args[1] {
 	case "today":
-		scores, err := api.GetScores("2023-10-01")
+		date := time.Now().Format("2006-01-02")
+		endDate := time.Now().AddDate(0, 0, 1).Format("2006-01-02")
+
+		scores, err := api.GetScores(date, endDate)
 		if err != nil {
 			fmt.Println("Error fetching today's scores:", err)
 			os.Exit(1)
