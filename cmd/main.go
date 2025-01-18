@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"os"
 	"strings"
@@ -16,9 +15,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	reader := bufio.NewReader(strings.NewReader(os.Args[1]))
-	input, _ := reader.ReadString('\n')
-	input = strings.TrimSpace(input)
+	input := strings.TrimSpace(os.Args[1])
 
 	switch {
 	case input == "today":
