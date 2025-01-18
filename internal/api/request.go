@@ -1,9 +1,11 @@
 package api
 
-func TodaysScores() () {
+var basePath = "https://api.balldontlie.io//mlb/v1"
 
+func TodaysScores() () {
+	
 }
 
-func YesterdaysScores() () {
-	
+func YesterdaysScores() ()	{
+
 }

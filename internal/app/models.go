@@ -11,8 +11,6 @@ type Game struct {
 	AwayTeam            Team
 	HomeScore           int
 	AwayScore           int
-	HomeStartingPitcher string
-	AwayStartingPitcher string
 	GameTime            string
 	GameStatus          string
 	Date                string
