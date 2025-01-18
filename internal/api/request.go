@@ -1,11 +1,66 @@
 package api
 
-var basePath = "https://api.balldontlie.io//mlb/v1"
+import (
+	"encoding/json"
+	"fmt"
+	"io"
+	"net/http"
+	"os"
 
-func TodaysScores() () {
-	
+	"github.com/codytheroux96/mlb-scores/internal/app"
+	"github.com/joho/godotenv"
+)
+
+var (
+	basePath = "https://api.balldontlie.io/mlb/v1"
+	apiKey   string
+)
+
+func init() {
+	err := godotenv.Load()
+	if err != nil {
+		fmt.Println("Error loading .env file")
+		os.Exit(1)
+	}
+	apiKey = os.Getenv("API_KEY")
 }
 
-func YesterdaysScores() ()	{
+func GetScores(date string) (*app.Scores, error) {
+	endDate := "2023-10-28"
+
+	req, err := http.NewRequest("GET", basePath+"/games?dates[]="+date+"&dates[]="+endDate, nil)
+	if err != nil {
+		return nil, fmt.Errorf("error creating request: %w", err)
+	}
+
+	req.Header.Set("Authorization", apiKey)
+
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		return nil, fmt.Errorf("error making request: %w", err)
+	}
+	defer resp.Body.Close()
+
+	body, err := io.ReadAll(resp.Body)
+    if err != nil {
+        return nil, fmt.Errorf("error reading response body: %w", err)
+    }
+
+    fmt.Println("Response Body:", string(body))
+
+	var scores app.Scores
+	err = json.Unmarshal(body, &scores)
+	if err != nil {
+		return nil, fmt.Errorf("error decoding JSON response: %w", err)
+	}
+	return &scores, nil
+}
+
+func TodaysScores() {
+
+}
+
+func YesterdaysScores() {
 
 }
