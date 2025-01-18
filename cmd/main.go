@@ -16,6 +16,7 @@ func main() {
 	}
 
 	input := strings.TrimSpace(os.Args[1])
+	input = strings.ToLower(input)
 
 	switch {
 	case input == "today":
