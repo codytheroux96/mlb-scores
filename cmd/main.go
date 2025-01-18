@@ -73,7 +73,7 @@ func main() {
 
 			if game.HomeTeamData.Runs > game.AwayTeamData.Runs {
 				winner = game.HomeTeam.DisplayName
-			} else if game.AwayTeamData.Runs < game.HomeTeamData.Runs {
+			} else if game.AwayTeamData.Runs > game.HomeTeamData.Runs {
 				winner = game.AwayTeam.DisplayName
 			} else {
 				winner = "Game is not over yet"
