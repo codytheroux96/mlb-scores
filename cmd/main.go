@@ -19,7 +19,7 @@ func main() {
 		date := time.Now().Format("2006-01-02")
 		endDate := date
 
-		scores, err := api.GetProvidedDatesScores(date, endDate)
+		scores, err := api.GetProvidedDateScores(date, endDate)
 		if err != nil {
 			fmt.Println("Error fetching today's scores:", err)
 			os.Exit(1)
@@ -32,7 +32,7 @@ func main() {
 		date := time.Now().AddDate(0, 0, -1).Format("2006-01-02")
 		endDate := date
 
-		scores, err := api.GetProvidedDatesScores(date, endDate)
+		scores, err := api.GetProvidedDateScores(date, endDate)
 		if err != nil {
 			fmt.Println("Error fetching today's scores:", err)
 			os.Exit(1)

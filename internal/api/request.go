@@ -54,7 +54,7 @@ func GetScores(date, endDate string) (*app.Scores, error) {
 	return &scores, nil
 }
 
-func GetProvidedDatesScores(date, endDate string) ([]string, error) {
+func GetProvidedDateScores(date, endDate string) ([]string, error) {
 	scores, err := GetScores(date, endDate)
 	if err != nil {
 		return nil, fmt.Errorf("error fetching today's scores: %w", err)
