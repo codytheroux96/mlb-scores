@@ -1,5 +1,5 @@
 # MLB Scores CLI ⚾
-MLB Scores CLI is a command-line application that allows you to view Major League Baseball scores for today, yesterday, or any specified date. Powered by [Charm's Bubble Tea framework](https://charm.sh), the app displays game results in a styled table.
+MLB Scores CLI is a command-line application that allows you to view Major League Baseball scores for today, yesterday, or any specified date after Opening Day 2002 (API doesn't have data beyond this). Powered by [Charm's Bubble Tea framework](https://charm.sh), the app displays game results in a styled table.
 
 
 ## Example Output
