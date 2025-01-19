@@ -24,15 +24,17 @@ MLB Scores CLI is a command-line application that allows you to view Major Leagu
 
 ## Installation and Running the Application
 
-1.  To install this run the command `go install github.com/codytheroux96/mlb-scores/cmd/mlb-scores@v1.0.0`
-2.  Once this installs head on over to [balldontlie.io](https://balldontlie.io) and create a free account where you will get an API key
-3. In the root of this project create a `.env` file and add `API_KEY=<your-API-key-here>` 
-4.  Now you can run the project using the `mlb-scores` command mentioned previously in this readme. Unfortunately at this time you can ONLY run those commands successfully while you have the project open
+1.  To install this run the command `go install github.com/codytheroux96/mlb-scores/cmd/mlb-scores@v1.2.2`
+2. Once this installs head on over to [balldontlie.io](https://balldontlie.io) and create a free account where you will get an API key
+3. With the API key add `export MLB_API_KEY=<your-api-key>` to your shell profile (bashrc or zshrc):
+    - Don't forget to `source` (if on Linux/Mac) or `setx MLB_API_KEY` if you are on Windows after you've added it.
+    - Restart your terminal once done
+    - If you want to check that this worked you can run `echo $MLB_API_KEY` if on Linux/Mac or `echo %MLB_API_KEY%` if on Windows.
+4. Now you can run the project using the `mlb-scores` command mentioned previously in this readme. 
 
 
 ## More To Come
 
-- Currently you can only run the commands while you are in the project. I need to fix this so that you can run any of the `mlb-scores` commands outside of the project.
 - Adding more fields into the table (that I already have in my models) and updating the look of the table as well.
 
 
