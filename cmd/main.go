@@ -13,7 +13,7 @@ import (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("expected you to specify either 'today' or 'yesterday")
+		fmt.Println("expected you to specify either 'today', 'yesterday', or a date in the format 'YYYY-MM-DD'")
 		os.Exit(1)
 	}
 
