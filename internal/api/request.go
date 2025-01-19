@@ -6,6 +6,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"path/filepath"
 
 	"github.com/codytheroux96/mlb-scores/internal/app"
 	"github.com/joho/godotenv"
@@ -17,9 +18,15 @@ var (
 )
 
 func init() {
-	err := godotenv.Load()
+	execDir, err := os.Executable()
 	if err != nil {
-		fmt.Println("Error loading .env file")
+		fmt.Println("Error determining executable directory:", err)
+		os.Exit(1)
+	}
+	envPath := filepath.Join(filepath.Dir(execDir), ".env")
+	err = godotenv.Load(envPath)
+	if err != nil {
+		fmt.Printf("Error loading .env file from %s\n", envPath)
 		os.Exit(1)
 	}
 	apiKey = os.Getenv("API_KEY")
