@@ -24,7 +24,10 @@ MLB Scores CLI is a command-line application that allows you to view Major Leagu
 
 ## Installation and Running the Application
 
-1.  To install this run the command `go install github.com/codytheroux96/mlb-scores/cmd/mlb-scores@v1.2.2`
+1.  To install this run the command 
+```bash
+go install github.com/codytheroux96/mlb-scores/cmd/mlb-scores@v1.2.2
+```
 2. Once this installs head on over to [balldontlie.io](https://balldontlie.io) and create a free account where you will get an API key.
 3. With the API key add `export MLB_API_KEY=<your-api-key>` to your shell profile (bashrc or zshrc):
     - Don't forget to `source ~/.bashrc` or `source ~/.zshrc` after you've added the API key.
