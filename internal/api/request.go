@@ -6,6 +6,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"path/filepath"
 
 	"github.com/codytheroux96/mlb-scores/internal/app"
 	"github.com/joho/godotenv"
@@ -17,12 +18,26 @@ var (
 )
 
 func init() {
-	err := godotenv.Load()
+	execPath, err := os.Executable()
 	if err != nil {
-		fmt.Println("Error loading .env file")
+		fmt.Println("Error determining executable path:", err)
 		os.Exit(1)
 	}
+
+	projectRoot := filepath.Dir(execPath)
+	envPath := filepath.Join(projectRoot, ".env")
+
+	err = godotenv.Load(envPath)
+	if err != nil {
+		fmt.Printf("Error loading .env file from %s: %v\n", envPath, err)
+		os.Exit(1)
+	}
+
 	apiKey = os.Getenv("API_KEY")
+	if apiKey == "" {
+		fmt.Printf("Error: API_KEY not found in %s\n", envPath)
+		os.Exit(1)
+	}
 }
 
 func GetScores(date, endDate string) (*app.Scores, error) {
