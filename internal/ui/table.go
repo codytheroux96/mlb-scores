@@ -19,8 +19,8 @@ type GameData struct {
 func RenderTable(gameData []GameData) string {
 	columns := []table.Column{
 		{Title: "Date", Width: 12},
-		{Title: "Home Team", Width: 20},
 		{Title: "Away Team", Width: 20},
+		{Title: "Home Team", Width: 20},
 		{Title: "Score", Width: 10},
 		{Title: "Status", Width: 15},
 		{Title: "Winner", Width: 20},
