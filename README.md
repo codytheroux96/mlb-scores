@@ -46,3 +46,4 @@ MLB Scores CLI is a command-line application that allows you to view Major Leagu
 ## Acknowledgments 🙏
 - Thanks to [Charm](https://charm.sh) for their excellent CLI tools.
 - Thanks to [balldontlie.io](https://balldontlie.io) for providing MLB data.
+- Thanks to devkevbot for the [inspiration](https://github.com/devkevbot/who-scored)
