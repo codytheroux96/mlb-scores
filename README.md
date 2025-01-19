@@ -33,6 +33,7 @@ MLB Scores CLI is a command-line application that allows you to view Major Leagu
 ## More To Come
 
 - Currently you can only run the commands while you are in the project. I need to fix this so that you can run any of the `mlb-scores` commands outside of the project.
+- Adding more fields into the table (that I already have in my models) and updating the look of the table as well
 
 
 ## Contributing 🤝
