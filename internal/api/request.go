@@ -26,6 +26,13 @@ func init() {
 }
 
 func GetScores(date, endDate string) (*app.Scores, error) {
+	apiInfoStartDate := "2002-03-31"
+
+	if date < apiInfoStartDate {
+		fmt.Println("The API being used does not provide info before opening day in 2002.")
+		os.Exit(1)
+	}
+
 	req, err := http.NewRequest("GET", basePath+"/games?dates[]="+date+"&dates[]="+endDate, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
