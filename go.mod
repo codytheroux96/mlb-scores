@@ -2,10 +2,7 @@ module github.com/codytheroux96/mlb-scores
 
 go 1.23.0
 
-require (
-	github.com/charmbracelet/bubbles v0.20.0
-	github.com/joho/godotenv v1.5.1
-)
+require github.com/charmbracelet/bubbles v0.20.0
 
 require (
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect

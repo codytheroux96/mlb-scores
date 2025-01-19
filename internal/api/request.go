@@ -6,10 +6,8 @@ import (
 	"io"
 	"net/http"
 	"os"
-	"path/filepath"
 
 	"github.com/codytheroux96/mlb-scores/internal/app"
-	"github.com/joho/godotenv"
 )
 
 var (
@@ -18,23 +16,9 @@ var (
 )
 
 func init() {
-	homeDir, err := os.UserHomeDir()
-	if err != nil {
-		fmt.Println("Error determining user's home directory:", err)
-		os.Exit(1)
-	}
-
-	envPath := filepath.Join(homeDir, ".mlb-scores", ".env")
-
-	err = godotenv.Load(envPath)
-	if err != nil {
-		fmt.Printf("Error loading .env file from %s: %v\n", envPath, err)
-		os.Exit(1)
-	}
-
-	apiKey = os.Getenv("API_KEY")
+	apiKey = os.Getenv("MLB_API_KEY")
 	if apiKey == "" {
-		fmt.Printf("Error: API_KEY not found in %s\n", envPath)
+		fmt.Println("Error: MLB_API_KEY not set. Please add it to your environment variables.")
 		os.Exit(1)
 	}
 }
