@@ -18,14 +18,13 @@ var (
 )
 
 func init() {
-	execPath, err := os.Executable()
+	workingDir, err := os.Getwd()
 	if err != nil {
-		fmt.Println("Error determining executable path:", err)
+		fmt.Println("Error determining working directory:", err)
 		os.Exit(1)
 	}
 
-	projectRoot := filepath.Dir(execPath)
-	envPath := filepath.Join(projectRoot, ".env")
+	envPath := filepath.Join(workingDir, ".env")
 
 	err = godotenv.Load(envPath)
 	if err != nil {
