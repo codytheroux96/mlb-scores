@@ -3,6 +3,12 @@ MLB Scores CLI is a command-line application that allows you to view Major Leagu
 
 ---
 
+## Example Output
+
+![Example Output](image.png)
+
+---
+
 ## Features 🚀
 
 - **View Today's Scores:** Get a list of games played today.
@@ -10,6 +16,15 @@ MLB Scores CLI is a command-line application that allows you to view Major Leagu
 - **Specify a Date:** Fetch scores for any valid date in YYYY-MM-DD format (e.g., `2023-10-28`).
 
 ---
+
+## Commands
+
+- `mlb-scores today` to display MLB scores from today
+- `mlb-scores yesterday` to display MLB scores from yesterday
+- `mlb-scores YYYY-MM-DD` to display MLB scores from a specified date
+
+---
+
 
 ## Acknowledgments 🙏
 - Thanks to [Charm](https://charm.sh) for their excellent CLI tools.
