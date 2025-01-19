@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"runtime"
 
 	"github.com/codytheroux96/mlb-scores/internal/app"
 	"github.com/joho/godotenv"
@@ -18,15 +19,12 @@ var (
 )
 
 func init() {
-	workingDir, err := os.Getwd()
-	if err != nil {
-		fmt.Println("Error determining working directory:", err)
-		os.Exit(1)
-	}
+	_, currentFile, _, _ := runtime.Caller(0)
+	projectRoot := filepath.Join(filepath.Dir(currentFile), "../../")
 
-	envPath := filepath.Join(workingDir, ".env")
+	envPath := filepath.Join(projectRoot, ".env")
 
-	err = godotenv.Load(envPath)
+	err := godotenv.Load(envPath)
 	if err != nil {
 		fmt.Printf("Error loading .env file from %s: %v\n", envPath, err)
 		os.Exit(1)
