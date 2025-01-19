@@ -5,7 +5,7 @@ MLB Scores CLI is a command-line application that allows you to view Major Leagu
 
 ## Example Output
 
-![Example Output](image.png)
+![Example Output](assets/image.png)
 
 ---
 
