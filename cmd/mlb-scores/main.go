@@ -83,9 +83,9 @@ func convertToGameData(scores *app.Scores) []ui.GameData {
 		gameData = append(gameData, ui.GameData{
 			Date:      game.Date,
 			AwayTeam:  game.AwayTeam.DisplayName,
-			HomeTeam:  game.HomeTeam.DisplayName,
-			HomeScore: game.HomeTeamData.Runs,
 			AwayScore: game.AwayTeamData.Runs,
+			HomeScore: game.HomeTeamData.Runs,
+			HomeTeam:  game.HomeTeam.DisplayName,
 			Status:    game.Status,
 			Winner:    winner,
 		})

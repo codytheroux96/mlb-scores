@@ -20,8 +20,8 @@ func RenderTable(gameData []GameData) string {
 	columns := []table.Column{
 		{Title: "Date", Width: 12},
 		{Title: "Away Team", Width: 20},
-		{Title: "Home Team", Width: 20},
 		{Title: "Score", Width: 10},
+		{Title: "Home Team", Width: 20},
 		{Title: "Status", Width: 15},
 		{Title: "Winner", Width: 20},
 	}
@@ -31,8 +31,8 @@ func RenderTable(gameData []GameData) string {
 		rows = append(rows, table.Row{
 			game.Date,
 			game.AwayTeam,
+			fmt.Sprintf("%d - %d", game.AwayScore, game.HomeScore),
 			game.HomeTeam,
-			fmt.Sprintf("%d - %d", game.HomeScore, game.AwayScore),
 			game.Status,
 			game.Winner,
 		})
